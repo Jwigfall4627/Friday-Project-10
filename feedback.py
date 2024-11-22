@@ -143,25 +143,3 @@ summary.columns = ['Sentiment Category', 'Count']
 print("\nSummary Table:")
 print(summary)
 
-# Plot the table
-plt.figure(figsize=(6, 2))
-plt.axis('off')
-plt.table(cellText=summary.values, colLabels=summary.columns, cellLoc='center', loc='center')
-plt.title('Summary Table of Sentiments', fontsize=14)
-plt.show()
-
-# 3. Boxplot for Sentiment Scores
-plt.figure(figsize=(8, 5))
-sns.boxplot(data=df, x='Sentiment Category', y='Sentiment Score', palette='coolwarm')
-plt.title('Sentiment Scores by Category', fontsize=14)
-plt.xlabel('Sentiment Category', fontsize=12)
-plt.ylabel('Sentiment Score', fontsize=12)
-plt.show()
-
-# 4. Pie Chart for Sentiment Distribution
-plt.figure(figsize=(6, 6))
-df['Sentiment Category'].value_counts().plot.pie(
-    autopct='%1.1f%%', startangle=90, colors=sns.color_palette('pastel'))
-plt.title('Sentiment Category Proportion', fontsize=14)
-plt.ylabel('')
-plt.show()
