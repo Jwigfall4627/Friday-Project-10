@@ -7,7 +7,7 @@ import seaborn as sns
 import random
 
 # Path to the database
-db_path = "/Users/johnathenwigfall/Desktop/Friday-Project-10/feedback.db"
+db_path = "/Users/johnathenwigfall/Desktop/Friday-Project-10/feedback.db" #Path to the database 
 conn = sqlite3.connect(db_path)
 
 # Create a cursor object to interact with the database
@@ -38,7 +38,7 @@ for table in tables:
 conn.close()
 
 # Save each table's DataFrame to an Excel file
-excel_path = "/Users/johnathenwigfall/Desktop/Friday-Project-10/Apple Users Feedback.xlsx"
+excel_path = "/Users/johnathenwigfall/Desktop/Friday-Project-10/Apple Users Feedback.xlsx" #Saved Excel file on your computer
 with pd.ExcelWriter(excel_path, engine='openpyxl') as writer:
     for table_name, df in customer_feedback_dict.items():
         df.to_excel(writer, sheet_name=table_name, index=False)
@@ -82,7 +82,7 @@ def categorize_sentiment(score):
 df['Sentiment Category'] = df['Sentiment Score'].apply(categorize_sentiment)
 
 # Save the results to a new Excel file
-output_file = "/Users/johnathenwigfall/Desktop/Friday-Project-10/reviews_with_sentiment.xlsx"
+output_file = "/Users/johnathenwigfall/Desktop/Friday-Project-10/reviews_with_sentiment.xlsx" #Filepath that is saved onto your computer
 df.to_excel(output_file, index=False)
 print(f"Sentiment analysis results saved to {output_file}")
 
@@ -94,7 +94,7 @@ sentiment_colors = {
 }
 
 # Open a PDF file to save plots
-pdf_path = "/Users/johnathenwigfall/Desktop/Friday-Project-10/Sentiment_Visualization_FP10.pdf"
+pdf_path = "/Users/johnathenwigfall/Desktop/Friday-Project-10/Sentiment_Visualization_FP10.pdf" #PDF or word document file saved to your computer 
 with PdfPages(pdf_path) as pdf:
     # 1. Bar Chart for Sentiment Category Distribution
     plt.figure(figsize=(10, 6))
